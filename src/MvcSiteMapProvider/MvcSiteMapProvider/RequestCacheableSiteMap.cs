@@ -80,6 +80,16 @@ namespace MvcSiteMapProvider
             return result;
         }
 
+        protected override void ThrowIfActionAndUrlNotSet(ISiteMapNode node)
+        {
+            if(node.Title == "Root")
+            {
+                return;
+            }
+
+            base.ThrowIfActionAndUrlNotSet(node);
+        }
+
         public override bool IsAccessibleToUser(ISiteMapNode node)
         {
             var key = this.GetCacheKey("IsAccessibleToUser_" + node.Key);

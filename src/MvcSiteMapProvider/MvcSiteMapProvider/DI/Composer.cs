@@ -3,9 +3,9 @@ using MvcSiteMapProvider.Xml;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using System.Web.Routing;
-#if !MVC2
-using System.Web.WebPages.Razor;
-#endif
+//#if !MVC2
+//using System.Web.WebPages.Razor;
+//#endif
 
 namespace MvcSiteMapProvider.DI
 {
@@ -17,11 +17,11 @@ namespace MvcSiteMapProvider.DI
     {
         public static void Compose()
         {
-#if !MVC2
-            // Register global namespaces with Razor so we don't have to import them in Web.config
-            WebPageRazorHost.AddGlobalImport("MvcSiteMapProvider.Web.Html");
-            WebPageRazorHost.AddGlobalImport("MvcSiteMapProvider.Web.Html.Models");
-#endif
+//#if !MVC2
+//            // Register global namespaces with Razor so we don't have to import them in Web.config
+//            WebPageRazorHost.AddGlobalImport("MvcSiteMapProvider.Web.Html");
+//            WebPageRazorHost.AddGlobalImport("MvcSiteMapProvider.Web.Html.Models");
+//#endif
 
             // Get the configuration settings
             var settings = new ConfigurationSettings();
